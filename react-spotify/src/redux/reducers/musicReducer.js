@@ -39,16 +39,6 @@ const musicReducer = (state = initialState, action) => {
         },
       };
 
-    /* case SET_DISLIKE:
-      return {
-        ...state,
-        results: {
-          ...state.results,
-          [action.payload.sectionNumber]: state.results[action.payload.sectionNumber].map((music) =>
-            music.id === action.payload.id ? { ...music, like: !music.like } : music
-          ),
-        },
-      }; */
     default:
       return state;
   }

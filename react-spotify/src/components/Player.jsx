@@ -10,11 +10,19 @@ const Player = () => {
   const currentSong = useSelector((state) => state.music.currentSong);
 
   return (
-    <Container fluid className="bg-container pt-1">
-      <Row className="h-100">
-        <Col lg={{ span: 10, offset: 2 }}>
-          <Row className="h-100 d-flex flex-column justify-content-center align-items-center">
-            <Col xs={6} md={4} className="playerControls">
+    <Container fluid className="bg-container p-0">
+      <Row>
+        <Col>
+          <Row className="d-flex justify-content-center align-items-center">
+            <Col xs={4} md={4} className="justify-content-start align-item-center">
+              {currentSong && (
+                <div className="text-light" style={{ maxWidth: "200px", maxHeight: "50px" }}>
+                  <p>Now Playing: {currentSong.title}</p>
+                  <p>Artist: {currentSong.artist.name}</p>
+                </div>
+              )}
+            </Col>
+            <Col xs={8} md={4} className="playerControls">
               <div className="d-flex justify-content-between">
                 <a href="#">
                   <Image src={shuffle} alt="shuffle" fluid />
@@ -32,18 +40,9 @@ const Player = () => {
                   <Image src={repeat} alt="repeat" fluid />
                 </a>
               </div>
-              <ProgressBar now={0} className="mt-3" />
+              <ProgressBar className="mt-3" />
             </Col>
-            <Row>
-              <Col className="justify-content-start">
-                {currentSong && (
-                  <div className="text-white " style={{ maxWidth: "400px" }}>
-                    <p>Now Playing: {currentSong.title}</p>
-                    <p>Artist: {currentSong.artist.name}</p>
-                  </div>
-                )}
-              </Col>
-            </Row>
+            <Col md={4}></Col>
           </Row>
         </Col>
       </Row>

@@ -26,7 +26,7 @@ const MusicSection = ({ title, artist, sectionNumber }) => {
         <h2 className="text-white">{title}</h2>
         {songs &&
           songs[sectionNumber].map((song) => (
-            <Col key={song.id} xs={12} sm={6} lg={3} className="text-center">
+            <Col key={song.id} xs={12} sm={6} lg={3} className="d-flex flex-column text-center">
               <Image src={song.album.cover_medium} fluid alt="track" className="mb-2" onClick={() => handleSongClick(song)} />
               <Button className="bg-transparent border border-0" onClick={() => handleLikeClick(song.id)}>
                 {!song.like ? <Heart className="text-white" /> : <HeartFill className="text-white" />}
