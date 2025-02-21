@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Container, Row, Col, Image, Button } from "react-bootstrap";
-import { fetchMusic, setCurrentSong } from "../redux/action/musicActions";
+import { fetchMusic, setCurrentSong, setLike } from "../redux/action/musicActions";
 import { Heart, HeartFill } from "react-bootstrap-icons";
 
 const MusicSection = ({ title, artist, sectionNumber }) => {
@@ -9,7 +9,7 @@ const MusicSection = ({ title, artist, sectionNumber }) => {
   const songs = useSelector((state) => state.music.results);
 
   const handleLikeClick = (id) => {
-    dispatch();
+    dispatch(setLike(id));
   };
 
   useEffect(() => {
