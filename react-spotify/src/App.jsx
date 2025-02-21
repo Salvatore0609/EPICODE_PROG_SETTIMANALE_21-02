@@ -8,20 +8,33 @@ import Player from "./components/Player";
 const App = () => {
   return (
     <>
-      <Sidebar />
-      <Container>
-        <Row>
-          <Col>
-            <MainSection />
-            <MusicSection title="Rock Classics" artist="queen" sectionNumber="section1" />
-            <MusicSection title="Pop Culture" artist="katyperry" sectionNumber="section2" />
-            <MusicSection title="#HipHop" artist="eminem" sectionNumber="section3" />
-          </Col>
-        </Row>
+      <Container fluid>
+        <Sidebar />
+        {/* <div className="content"> */}
+        {/* <div className="page"> */}
+        <Container fluid>
+          <Row>
+            <Col>
+              <MainSection />
+              <MusicSection title="Rock Classics" artist="queen" sectionNumber="section1" />
+              <MusicSection title="Pop Culture" artist="katyperry" sectionNumber="section2" />
+              <MusicSection title="#HipHop" artist="eminem" sectionNumber="section3" />
+            </Col>
+          </Row>
+          <Player />
+        </Container>
+        {/* </div> */}
+        {/* </div> */}
       </Container>
-      <Player />
     </>
   );
 };
+/* ma cosa hai combinato con il css? non ho controllato
 
+  sto ancora facendo, okok, mi mostri un attimo la pagina?
+  porcodio
+  mi sta facendo paura quello che vedo
+  e te che pensavi di essere messo peggio, no ma io non parlavo di loro, parlavo di quello 
+  che vedo nel browser ahahaha
+*/
 export default App;

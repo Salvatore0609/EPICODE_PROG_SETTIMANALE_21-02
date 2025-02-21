@@ -34,14 +34,16 @@ const Player = () => {
               </div>
               <ProgressBar now={0} className="mt-3" />
             </Col>
-            <Col className="justify-content-start">
-              {currentSong && (
-                <div className="text-white " style={{ maxWidth: "400px" }}>
-                  <p>Now Playing: {currentSong.title}</p>
-                  <p>Artist: {currentSong.artist.name}</p>
-                </div>
-              )}
-            </Col>
+            <Row>
+              <Col className="justify-content-start">
+                {currentSong && (
+                  <div className="text-white " style={{ maxWidth: "400px" }}>
+                    <p>Now Playing: {currentSong.title}</p>
+                    <p>Artist: {currentSong.artist.name}</p>
+                  </div>
+                )}
+              </Col>
+            </Row>
           </Row>
         </Col>
       </Row>

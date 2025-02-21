@@ -9,7 +9,7 @@ const MusicSection = ({ title, artist, sectionNumber }) => {
   const songs = useSelector((state) => state.music.results);
 
   const handleLikeClick = (id) => {
-    dispatch(setLike(id));
+    dispatch(setLike(sectionNumber, id));
   };
 
   useEffect(() => {

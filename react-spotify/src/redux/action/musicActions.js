@@ -5,7 +5,7 @@ export const SET_DISLIKE = "SET_DISLIKE";
 
 export const setResults = (results) => ({ type: SET_RESULTS, payload: results });
 export const setCurrentSong = (song) => ({ type: SET_CURRENT_SONG, payload: song });
-export const setLike = (id) => ({ type: SET_LIKE, payload: id });
+export const setLike = (sectionNumber, id) => ({ type: SET_LIKE, payload: { sectionNumber, id } });
 export const fetchMusic = (artistName, sectionNumber) => {
   return async (dispatch) => {
     try {

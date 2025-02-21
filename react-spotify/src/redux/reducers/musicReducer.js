@@ -31,11 +31,14 @@ const musicReducer = (state = initialState, action) => {
         ...state,
         results: {
           ...state.results,
-          [action.payload.sectionNumber]: [action.payload.sectionNumber].map((music) =>
-            music.id === action.payload.id ? { ...music, like: true } : music
-          ),
+          [action.payload.sectionNumber]: [action.payload.sectionNumber].map((music) => {
+            const newMusicList = music.id === action.payload.id ? { ...music, like: true } : music;
+            console.log(newMusicList);
+            return newMusicList;
+          }),
         },
       };
+    // ottimo
     case SET_DISLIKE:
       return {
         ...state,
