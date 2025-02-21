@@ -25,10 +25,10 @@ const MusicSection = ({ title, artist, sectionNumber }) => {
       <Row className="py-3">
         <h2 className="text-white">{title}</h2>
         {songs &&
-          songs[sectionNumber]?.map((song) => (
+          songs[sectionNumber].map((song) => (
             <Col key={song.id} xs={12} sm={6} lg={3} className="text-center">
               <Image src={song.album.cover_medium} fluid alt="track" className="mb-2" onClick={() => handleSongClick(song)} />
-              <Button onClick={() => handleLikeClick(song.id)}>
+              <Button className="bg-transparent border border-0" onClick={() => handleLikeClick(song.id)}>
                 {!song.like ? <Heart className="text-white" /> : <HeartFill className="text-white" />}
               </Button>
               <p className="text-white">

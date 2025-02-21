@@ -1,4 +1,4 @@
-import { SET_CURRENT_SONG, SET_RESULTS, SET_LIKE, SET_DISLIKE } from "../action/musicActions";
+import { SET_CURRENT_SONG, SET_RESULTS, SET_LIKE } from "../action/musicActions";
 
 const initialState = {
   results: {
@@ -31,24 +31,24 @@ const musicReducer = (state = initialState, action) => {
         ...state,
         results: {
           ...state.results,
-          [action.payload.sectionNumber]: [action.payload.sectionNumber].map((music) => {
-            const newMusicList = music.id === action.payload.id ? { ...music, like: true } : music;
+          [action.payload.sectionNumber]: state.results[action.payload.sectionNumber].map((music) => {
+            const newMusicList = music.id === action.payload.id ? { ...music, like: !music.like } : music;
             console.log(newMusicList);
             return newMusicList;
           }),
         },
       };
-    // ottimo
-    case SET_DISLIKE:
+
+    /* case SET_DISLIKE:
       return {
         ...state,
         results: {
           ...state.results,
-          [action.payload.sectionNumber]: [action.payload.sectionNumber].map((music) =>
-            music.id === action.payload.id ? { ...music, like: false } : music
+          [action.payload.sectionNumber]: state.results[action.payload.sectionNumber].map((music) =>
+            music.id === action.payload.id ? { ...music, like: !music.like } : music
           ),
         },
-      };
+      }; */
     default:
       return state;
   }

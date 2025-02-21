@@ -1,7 +1,6 @@
 export const SET_RESULTS = "SET_RESULTS";
 export const SET_CURRENT_SONG = "SET_CURRENT_SONG";
 export const SET_LIKE = "SET_LIKE";
-export const SET_DISLIKE = "SET_DISLIKE";
 
 export const setResults = (results) => ({ type: SET_RESULTS, payload: results });
 export const setCurrentSong = (song) => ({ type: SET_CURRENT_SONG, payload: song });
