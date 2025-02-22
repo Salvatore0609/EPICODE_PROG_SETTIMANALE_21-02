@@ -5,7 +5,7 @@ import logo from "../assets/logo.png";
 const Sidebar = () => {
   return (
     <aside>
-      <Navbar variant="black" expand="md" className="fixed-left flex-column align-items-start">
+      <Navbar variant="black" expand="md" className="fixed-left flex-column align-items-center">
         <Row className="w-100">
           <Col>
             <Navbar.Brand href="home">
@@ -43,24 +43,24 @@ const Sidebar = () => {
             </Form>
           </Nav.Item>
         </Nav>
-        <div className="flex-column align-content-center vh-100 text-center">
-          <Button className="signup-btn mb-2" variant="light">
-            Sign Up
-          </Button>
-          <Button className="login-btn mb-2" variant="dark">
-            Login
-          </Button>
-          <div className="d-flex justify-content-center gap-2 mt-2">
-            <Nav.Link href="#" className="text-secondary">
-              Cookie Policy
-            </Nav.Link>
-            <span className="text-secondary"> | </span>
-            <Nav.Link href="#" className="text-secondary">
-              Privacy
-            </Nav.Link>
-          </div>
-        </div>
       </Navbar>
+      <div className="flex-column align-content-end vh-100 text-center">
+        <Button className="signup-btn mb-2" variant="light">
+          Sign Up
+        </Button>
+        <Button className="login-btn mb-2" variant="dark">
+          Login
+        </Button>
+        <div className="d-flex justify-content-center gap-2 mt-2">
+          <Nav.Link href="#" className="text-secondary">
+            Cookie Policy
+          </Nav.Link>
+          <span className="text-secondary"> | </span>
+          <Nav.Link href="#" className="text-secondary">
+            Privacy
+          </Nav.Link>
+        </div>
+      </div>
     </aside>
   );
 };
