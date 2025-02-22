@@ -13,12 +13,17 @@ const Player = () => {
     <Container fluid className="bg-container p-0">
       <Row>
         <Col>
-          <Row className="d-flex justify-content-center align-items-center">
-            <Col xs={4} md={4} className="justify-content-start align-item-center">
+          <Row className="d-flex justify-content-center">
+            <Col xs={4} md={4} className="justify-content-start">
               {currentSong && (
                 <div className="text-light" style={{ maxWidth: "200px", maxHeight: "50px" }}>
-                  <p>Now Playing: {currentSong.title}</p>
-                  <p>Artist: {currentSong.artist.name}</p>
+                  <div className="d-flex gap-3">
+                    <Image src={currentSong.album.cover_medium} fluid alt="track" style={{ maxWidth: "60px", maxHeight: "60px" }} />
+                    <div className="" style={{ maxHeight: "30px" }}>
+                      <p>Now Playing: {currentSong.title}</p>
+                      <p>Artist: {currentSong.artist.name}</p>
+                    </div>
+                  </div>
                 </div>
               )}
             </Col>
